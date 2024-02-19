@@ -1,6 +1,12 @@
+import { useState } from 'react';
 
 
 function AddNewEntry(){
+    const [type, setType] = useState(null);
+
+    const handleTypeChange = (event) => {
+        setType(event.target.value);
+    }
 
     return (
         <div>
@@ -10,28 +16,34 @@ function AddNewEntry(){
                 <input type="date" name="date" />
                 <br/><br/>
                 <p><label> Type: </label></p>
-                <input type="radio" name="type" value="income" />
+                <input type="radio" name="type" value="income" onChange={handleTypeChange} />
                 <label for="income"> Income </label>
-                <input type="radio" name="type" value="expenses" />
+                <input type="radio" name="type" value="expenses" onChange={handleTypeChange} />
                 <label for="expenses"> Expenses </label>
                 <br/><br/>
                 <label> Category: </label>
                 <br/><br/>
-                  {/* Salary, Other type of Income, Health Care, Education, Home, Car/Transportation, Food, Others*/}
-                <input type="radio" name="category" value="salary" />
-                <label for="salary"> Salary </label>
-                <input type="radio" name="category" value="otherincome" />
-                <label for="otherincome"> Other type of Income </label>
-                <input type="radio" name="category" value="healthcare" />
-                <label for="healthcare"> Healthcare </label>
-                <input type="radio" name="category" value="education" />
-                <label for="education"> Education </label>
-                <input type="radio" name="category" value="home" />
-                <label for="home"> Home </label>
-                <input type="radio" name="category" value="transportation" />
-                <label for="transportation"> Car/Transportation </label>
-                <input type="radio" name="category" value="food" />
-                <label for="food"> Food </label> 
+                {type === 'income' && (
+                    <>
+                        <input type="radio" name="category" value="salary" />
+                        <label for="salary"> Salary </label>
+                        <input type="radio" name="category" value="otherincome" />
+                        <label for="otherincome"> Other type of Income </label>
+                    </>
+                )}
+                {type === 'expenses' && (
+                    <>
+                        <input type="radio" name="category" value="healthcare" />
+                        <label for="healthcare"> Healthcare </label>
+                        <input type="radio" name="category" value="education" />
+                        <label for="education"> Education </label>
+                        <input type="radio" name="category" value="home" />
+                        <label for="home"> Home </label>
+                        <input type="radio" name="category" value="transportation" />
+                        <label for="transportation"> Car/Transportation </label>
+                        <input type="radio" name="category" value="food" />
+                        <label for="food"> Food </label>
+                    </>)}
                 <br/><br/>
                 <label> Amount </label><br/>
                 <input type="number" step=".01" name="amount"/>
