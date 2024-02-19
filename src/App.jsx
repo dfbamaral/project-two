@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
+import AddNewEntry from "./components/AddNewEntry";
 import BudgetPage from "./pages/BudgetPage";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         {/** this is a comment  */}
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
+        <Route path="/add" element={<AddNewEntry />} />
         <Route path="/budget" element={<BudgetPage />} />
       </Routes>
     </div>
