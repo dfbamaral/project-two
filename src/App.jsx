@@ -16,7 +16,7 @@ function App() {
     </div>
     <div>
       <Routes>
-        
+        {/** this is a comment  */}
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
       </Routes>
