@@ -8,6 +8,12 @@ function AddNewEntry(){
         setType(event.target.value);
     }
 
+    useState(() => {
+        fetch('/categories.json')
+          .then((response) => response.json())
+          .then((data) => setCategories(data))
+      }, [])
+
     return (
         <div>
             <h2>Add New Entry</h2>
@@ -20,11 +26,11 @@ function AddNewEntry(){
                 <label for="income"> Income </label>
                 <input type="radio" name="type" value="expenses" onChange={handleTypeChange} />
                 <label for="expenses"> Expenses </label>
-                <br/><br/>
                 <label> Category: </label>
                 <br/><br/>
                 {type === 'income' && (
                     <>
+                    <label> Category: </label><br/><br/>
                         <input type="radio" name="category" value="salary" />
                         <label for="salary"> Salary </label>
                         <input type="radio" name="category" value="otherincome" />
@@ -33,6 +39,7 @@ function AddNewEntry(){
                 )}
                 {type === 'expenses' && (
                     <>
+                    <label> Category: </label><br/><br/>
                         <input type="radio" name="category" value="healthcare" />
                         <label for="healthcare"> Healthcare </label>
                         <input type="radio" name="category" value="education" />
