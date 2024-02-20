@@ -3,6 +3,14 @@ import { useState } from 'react';
 
 function AddNewEntry(){
     const [type, setType] = useState(null);
+    const [categories, setCategories] = useState([]);
+    const [entry, setEntry] = useState(null);
+
+    useEffect(() => {
+        fetch('/categories.json')
+          .then((response) => response.json())
+          .then((data) => setCategories(data));
+      }, []);
 
     const handleTypeChange = (event) => {
         setType(event.target.value);
