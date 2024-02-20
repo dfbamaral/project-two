@@ -4,7 +4,7 @@ import axios from "axios";
 const API_URL = "http://localhost:5000";
 
 const EntryList = ()=> {
-const [entries, setEntries] = useState([])
+const [entries, setEntries] = useState(`${API_URL}/finance`)
 
 useEffect(()=>{
     axios.get(`${API_URL}`)
