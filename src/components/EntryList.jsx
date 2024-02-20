@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {useParams, useNavigate} from 'react-router-dom';
 
 const API_URL = "http://localhost:5000";
-
+const {id} = useParams();
+const navigate = useNavigate();
 const EntryList = ()=> {
 const [entries, setEntries] = useState([]);
 
