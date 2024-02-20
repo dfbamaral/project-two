@@ -1,28 +1,60 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
+//const API_URL = "http://localhost:5000";
 function AddNewEntry() {
   const [type, setType] = useState(null);
   const [finance, setFinance] = useState([]);
+  const [data_input, setDataInput] = useState("");
+  const [input, setInput] = useState("");
+  const [category, setCategory] = useState("");
+  const [value, setValue] = useState(0);
+  const [notes, setNotes] = useState("");
 
-  useEffect(() => {
+ /*  useEffect(() => {
     fetch('http://localhost:5000')
       .then((response) => response.json())
       .then((data) => setFinance(data.finance));
-  }, []);
+      /* .catch((error) => console.error(error)); 
+  }, []); */
 
-  const handleTypeChange = (event) => {
+
+
+  /*const handleTypeChange = (event) => {
     setType(event.target.checked ? event.target.value : null);
-  }; //This will set the type state to the value of the checked radio button, or null if no radio button is checked.
+  }; //This will set the type state to the value of the checked radio button, or null if no radio button is checked. */
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const reqBody = {
+        id: Math.random().toString(16).slice(2),
+        data_input, 
+        input, 
+        category, 
+        value, 
+        notes
+    }
+
+    axios.post('http://localhost:5000/finance', reqBody)
+          .then((response) => {
+            console.log(response);
+            setDataInput("");
+            setInput("");
+            setCategory("");
+            setValue("");
+            setNotes("");
+    })
+  }
 
   return (
     <div>
       <h2>Add New Entry</h2>
-      <form onSubmit={(event) => {
+      <form onSubmit={handleSubmit}
         /* event.preventDefault(); */
 
-        const formData = new FormData(event.target);
+        /*const formData = new FormData(event.target);
         const newEntry = {
           id: Math.random().toString(16).slice(2),
           data_input: formData.get('date'),
@@ -33,8 +65,9 @@ function AddNewEntry() {
         };
 
         setFinance([...finance, newEntry]);
+        */
 
-        axios.post('http://localhost:5000', newEntry)
+    /*     axios.post('http://localhost:5000', newEntry)
           .then((response) => {
             console.log(response);
             event.target.reset(); // reset the form
@@ -44,59 +77,59 @@ function AddNewEntry() {
             console.error(error);
            
           });
-      }}>
+      }} */>
         <label> Date </label>
-        <input type="date" name="date" />
+        <input type="date" value={data_input} name="date" onChange={(e)=> setDataInput(e.target.value)}/>
         <br /><br />
         <p><label> Type: </label></p>
-        <input type="radio" name="type" value="income" onChange={handleTypeChange} />
-        <label htmlFor="income"> Income </label>
-        <input type="radio" name="type" value="expenses" onChange={handleTypeChange} />
-        <label htmlFor="expenses"> Expenses </label>
+        <input type="radio" name="type" value="income" onChange={(e)=> setInput(e.target.value)} />
+        <label> Income </label>
+        <input type="radio" name="type" value="expenses"  onChange={(e)=> setInput(e.target.value)}/>
+        <label> Expenses </label>
 
         <br /><br />
-        {type === 'income' && (
+        {input === 'income' && (
           <>
             <label> Category: </label><br /><br />
-            <input type="radio" name="category" value="salary" />
-            <label htmlFor="salary"> Salary </label>
-            <input type="radio" name="category" value="otherincome" />
-            <label htmlFor="otherincome"> Other type of Income </label>
+            <input type="radio" name="category" value="salary" onChange={(e)=> setCategory(e.target.value)}/>
+            <label> Salary </label>
+            <input type="radio" name="category" value="otherincome" onChange={(e)=> setCategory(e.target.value)}/>
+            <label> Other type of Income </label>
           </>
         )}
-        {type === 'expenses' && (
+        {input === 'expenses' && (
           <>
             <label> Category: </label><br /><br />
-            <input type="radio" name="category" value="healthcare" />
-            <label htmlFor="healthcare"> Healthcare </label>
-            <input type="radio" name="category" value="education" />
-            <label htmlFor="education"> Education </label>
-            <input type="radio" name="category" value="home" />
-            <label htmlFor="home"> Home </label>
-            <input type="radio" name="category" value="transportation" />
-            <label htmlFor="transportation"> Car/Transportation </label>
-            <input type="radio" name="category" value="food" />
-            <label htmlFor="food"> Food </label>
+            <input type="radio" name="category" value="healthcare" onChange={(e)=> setCategory(e.target.value)}/>
+            <label> Healthcare </label>
+            <input type="radio" name="category" value="education" onChange={(e)=> setCategory(e.target.value)}/>
+            <label> Education </label>
+            <input type="radio" name="category" value="home" onChange={(e)=> setCategory(e.target.value)}/>
+            <label> Home </label>
+            <input type="radio" name="category" value="transportation" onChange={(e)=> setCategory(e.target.value)}/>
+            <label> Car/Transportation </label>
+            <input type="radio" name="category" value="food"onChange={(e)=> setCategory(e.target.value)} />
+            <label> Food </label>
           </>
         )}
         <br /><br />
         <label> Amount (EUR €) </label><br />
-        <input type="number" step=".01" name="amount" />
+        <input required type="number" value={parseFloat(value)}  name="amount" onChange={((e)=> setValue(parseFloat(e.target.value).toFixed(2)))}/>
         <br /><br />
         <label> Description </label><br />
-        <textarea rows="4" cols="50" name="description"></textarea>
+        <textarea rows="4" cols="50" name="description" value={notes} onChange={(e)=>setNotes(e.target.value)} ></textarea>
         <br /><br />
         <button type="submit">Add entry</button>
       </form>
 
-      <h2>Current Finances - New entry</h2>
+      {/* <h2>Current Finances - New entry</h2>
       <ul>
         {finance.map((entry) => (
           <li key={entry.id}>
             {entry.data_input} - {entry.input} - {entry.category} - {entry.value} - {entry.notes}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }
