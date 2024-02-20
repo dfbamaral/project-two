@@ -11,6 +11,9 @@ const EntryList = () => {
     axios
       .delete(`${API_URL}/finance/${entryId}`)
       .then(() => {
+
+        //we have this line of code to update the list  after deleting an entry.
+        //We are using a filter function to create a new array that does not include the deleted item.
         setEntries(entries.filter((entry) => entry.id !== entryId));
       })
       .catch((error) => console.log(error));
