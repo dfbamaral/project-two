@@ -25,8 +25,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/add" element={<AddNewEntry />} />
-        <Route path="/error" element={<Error />} />
         <Route path="/entrylist" element={<EntryList />} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </div>
   </>
