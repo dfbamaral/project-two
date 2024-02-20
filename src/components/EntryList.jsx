@@ -12,6 +12,14 @@ useEffect(()=>{
     .catch((error)=> console.log(error))
 }, []);
 
+const deleteEntry = () => {
+    axios
+    .delete(`${API_URL}/finance/${id}`)
+    .then(()=>{
+        navigate("/entrylist");
+    })
+    .catch((error)=> console.log(error));
+}
 
 return (
     <div>
@@ -39,8 +47,8 @@ const buttonStyle = {
                     <h4>{entry.category}</h4>
                     <p>{entry.data_input}</p>
                     <span>{entry.value}</span>
-                    <button style={buttonStyle}>editar</button>
-                    <button style={buttonStyle}>delete</button>
+                    {/* <button style={buttonStyle}>editar</button> */}
+                    <button style={buttonStyle} onClick={deleteEntry}>delete</button>
                 </div>
             )
         })}
