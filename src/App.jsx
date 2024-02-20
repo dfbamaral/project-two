@@ -7,6 +7,8 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import AddNewEntry from "./components/AddNewEntry";
 import BudgetPage from "./pages/BudgetPage";
+import EntryList from "./components/EntryList";
+
 
 function App() {
   return(
@@ -23,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/add" element={<AddNewEntry />} />
         <Route path="/budget" element={<BudgetPage />} />
+        <Route path="/entrylist" element={<EntryList />} />
       </Routes>
     </div>
   </>
