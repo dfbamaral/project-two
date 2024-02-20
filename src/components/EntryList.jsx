@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {useParams, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const API_URL = "http://localhost:5000";
-const {id} = useParams();
 const navigate = useNavigate();
 const EntryList = ()=> {
 const [entries, setEntries] = useState([]);
 
-const deleteEntry = () => {
+const deleteEntry = (id) => {
     axios
     .delete(`${API_URL}/finance/${id}`)
     .then(()=>{
