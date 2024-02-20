@@ -51,7 +51,7 @@ const buttonStyle = {
                     <p>{entry.data_input}</p>
                     <span>{entry.value}</span>
                     {/* <button style={buttonStyle}>editar</button> */}
-                    <button style={buttonStyle} onClick={deleteEntry}>delete</button>
+                    <button style={buttonStyle} onClick={() => deleteEntry(entry.id)}>delete</button>
                 </div>
             )
         })}
