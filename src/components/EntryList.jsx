@@ -3,9 +3,9 @@ import axios from "axios";
 import {useNavigate} from 'react-router-dom';
 
 const API_URL = "http://localhost:5000";
-const navigate = useNavigate();
 const EntryList = ()=> {
 const [entries, setEntries] = useState([]);
+const navigate = useNavigate();
 
 const deleteEntry = (id) => {
     axios
