@@ -110,13 +110,13 @@ const EntryList = () => {
                 <button 
                   style={buttonStyle}
                   onClick={() => deleteEntry(entry.id)}
-                ><img src="src\assets\delete.png" width={25}height={25} />
+                ><img src={"/src/assets/delete.png"} width={25}height={25} />
                   
                 </button>
                 <button 
                   style={buttonStyle}
                   onClick={() => editEntry(entry.id)}
-                ><img src="src\assets\edit.png" width={25}height={25} />
+                ><img src={"/src/assets/edit.png"} width={25}height={25} />
                  
                 </button>
               </>
