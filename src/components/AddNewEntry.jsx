@@ -37,7 +37,7 @@ function AddNewEntry() {
         notes
     }
 
-    axios.post('http://localhost:5000/finance', reqBody)
+    axios.post('https://project2-json-server-backend.onrender.com/finance', reqBody)
           .then((response) => {
             console.log(response);
             setDataInput("");

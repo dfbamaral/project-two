@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 
-const API_URL = "http://localhost:5000"
+const API_URL = "https://project2-json-server-backend.onrender.com/"
 
 const EntryList = () => {
   const [entries, setEntries] = useState([])
@@ -110,14 +110,14 @@ const EntryList = () => {
                 <button 
                   style={buttonStyle}
                   onClick={() => deleteEntry(entry.id)}
-                >
-                  delete
+                ><img src="src\assets\delete.png" width={25}height={25} />
+                  
                 </button>
                 <button 
                   style={buttonStyle}
                   onClick={() => editEntry(entry.id)}
-                >
-                  editar
+                ><img src="src\assets\edit.png" width={25}height={25} />
+                 
                 </button>
               </>
             )}
