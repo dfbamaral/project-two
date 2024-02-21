@@ -50,7 +50,8 @@ function AddNewEntry() {
 
   return (
     <div>
-      <h2>Add New Entry</h2>
+      <h2 style={{ border: '3px solid black', borderStyle: 'inset' }}>Add New Entry</h2>
+      
       <form onSubmit={handleSubmit}
         /* event.preventDefault(); */
 
@@ -101,15 +102,15 @@ function AddNewEntry() {
           <>
             <label> Category: </label><br /><br />
             <input type="radio" name="category" value="healthcare" onChange={(e)=> setCategory(e.target.value)}/>
-            <label> Healthcare </label>
+            <label> Healthcare 🚑 </label>
             <input type="radio" name="category" value="education" onChange={(e)=> setCategory(e.target.value)}/>
-            <label> Education </label>
+            <label> Education 📚 </label>
             <input type="radio" name="category" value="home" onChange={(e)=> setCategory(e.target.value)}/>
             <label> Home </label>
             <input type="radio" name="category" value="transportation" onChange={(e)=> setCategory(e.target.value)}/>
-            <label> Car/Transportation </label>
+            <label> Car/Transportation 🚗 </label>
             <input type="radio" name="category" value="food"onChange={(e)=> setCategory(e.target.value)} />
-            <label> Food </label>
+            <label> Food 🍔 </label>
           </>
         )}
         <br /><br />
@@ -130,8 +131,11 @@ function AddNewEntry() {
           </li>
         ))}
       </ul> */}
+      
     </div>
+
   );
+  
 }
 
 export default AddNewEntry;
