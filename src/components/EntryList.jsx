@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 
-const API_URL = "https://project2-json-server-backend.onrender.com/"
+const API_URL = "https://project2-json-server-backend.onrender.com"
 
 const EntryList = () => {
   const [entries, setEntries] = useState([])
