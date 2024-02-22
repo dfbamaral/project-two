@@ -63,7 +63,7 @@ const Charts = () => {
   }));
 
   const currencyFormatter = (number) => {
-    return '$' + Intl.NumberFormat('us').format(number).toString();
+    return '€' + Intl.NumberFormat('eur').format(number).toString();
   };
 
   return (
