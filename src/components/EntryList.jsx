@@ -74,8 +74,7 @@ const EntryList = () => {
               <>
               <h2 style={{ border: '2px solid black'}}>{entry.input}</h2>
               <h3>{entry.category}</h3>
-               
-                <br/><br/>
+
                 Note: 
                 <input 
                   type="text"

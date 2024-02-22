@@ -84,6 +84,6 @@ button:focus-visible {
 
 }
 .title{
-  align-content: center;
+  display: flex;
   text-align: center;
 }
