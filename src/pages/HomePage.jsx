@@ -5,6 +5,7 @@ const HomePage = () => (
         alignItems: "center",
         justifyContent: "center",
         flexWrap: "wrap",
+        backgroundcolor: "#4b438c"
       }}
     ><h1>Welcome to our personal finance App</h1> <b></b>
    {/*    <p style={{ marginLeft: "10%" }}>
