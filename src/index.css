@@ -75,6 +75,7 @@ button:focus-visible {
 .wrapper{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-top: 100px;
   
 }
 .App{
