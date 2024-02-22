@@ -10,10 +10,10 @@ const Investments = () => {
       setResult("Please fill full fields.");
       return;
     }
-
-    const interest = parseFloat(principal) * parseFloat(rate) / 100;
+  
+    const interest = parseFloat(principal) + (parseFloat(principal) * parseFloat(rate) / 100);
     setResult(interest.toFixed(2));
-  };
+  }
 
   return (
     <div
@@ -27,7 +27,7 @@ const Investments = () => {
       <h1>Calculater of Interest</h1>
       <input
         type="number"
-        placeholder="How much do you want invest?"
+        placeholder="€ to invest"
         value={principal}
         onChange={(e) => setPrincipal(e.target.value)}
       /> 
