@@ -25,43 +25,14 @@ const Charts = () => {
     borderRadius: "3px",
     cursor: "pointer",
   }
-/* 
-  const deleteEntry = (entryId) => {
-    axios
-      .delete(`${API_URL}/finance/${entryId}`)
-      .then(() => {
-        setEntries(entries.filter((entry) => entry.id !== entryId))
-      })
-      .catch((error) => console.log(error))
-  } */
 
- /*  const editEntry = (entryId) => {
-    setEditingId(entryId)
-    const entryToEdit = entries.find((entry) => entry.id === entryId)
-    setEditingEntry(entryToEdit)
-  } */
-
- /*  const updateEntry = (entryId, updatedEntry) =>{
-    axios
-      .put(`${API_URL}/finance/${entryId}`, updatedEntry)
-      .then(() => {
-        setEntries(entries.map((entry) => (entry.id === entryId ? updatedEntry : entry)))
-      })
-      .catch((error) => console.log(error))
-  }
- */
   useEffect(() => {
     axios
       .get(`${API_URL}/finance`)
       .then((response) => setEntries(response.data))
       .catch((error) => console.log(error))
   }, [])
-/* 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target
-    setEditingEntry({ ...editingEntry, [name]: value })
-  }
- */
+
   // Group entries by category and sum values
   const entriesByCategory = entries.reduce((acc, entry) => {
     if (!acc[entry.category]) {
@@ -78,7 +49,7 @@ const Charts = () => {
       <div className="title">
         <h1>Graphic</h1>
       
-      <div className="wrapper">
+      <div >
         <BarChart
           width={500}
           height={300}
@@ -97,66 +68,7 @@ const Charts = () => {
           <Legend />
           <Bar dataKey="value" fill="#8884d8" />
         </BarChart>
-        {/* {entries &&
-          entries.map((entry) => (
-            <div key={entry.id} style={divStyle}>
-              {editingId === entry.id ? (
-                <>
-                  <h2 style={{ border: '2px solid black' }}>{entry.input}</h2>
-                  <h3>{entry.category}</h3>
-
-                  Note:
-                  <input
-                    type="text"
-                    name="notes"
-                    value={editingEntry.notes}
-                    onChange={handleInputChange}
-                  />
-                  <br></br>
-                  Date:
-                  <input
-                    type="date"
-                    name="data_input"
-                    value={editingEntry.data_input}
-                    onChange={handleInputChange}
-                  /><br></br>
-                  Value:
-                  <input
-                    type="number"
-                    name="value"
-                    value={editingEntry.value}
-                    onChange={handleInputChange}
-                  />
-                  <br /><br />
-                  <button
-                    style={buttonStyle}
-                    onClick={() => updateEntry(entry.id, editingEntry)}
-                  >
-                    Atualizar
-                  </button>
-                </>
-              ) : (
-                <>
-                  <h2 style={{ border: '2px solid black' }}>{entry.input}</h2>
-                  <h3>{entry.category}</h3>
-                  <h4>{entry.notes}</h4>
-                  <p>{entry.data_input}</p>
-                  <span>{entry.value} €</span>
-                  <br /><br />
-                  <button
-                    style={buttonStyle}
-                    onClick={() => deleteEntry(entry.id)}
-                  ><img src="delete.png" width={25} height={25} />
-                  </button>
-                  <button
-                    style={buttonStyle}
-                    onClick={() => editEntry(entry.id)}
-                  ><img src="edit.png" width={25} height={25} />
-                  </button>
-                </>
-              )}
-            </div>
-          ))} */}
+        
       </div>
       </div>
     </div>
