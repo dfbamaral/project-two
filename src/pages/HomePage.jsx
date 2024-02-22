@@ -6,7 +6,7 @@ const HomePage = () => (
         justifyContent: "center",
         flexWrap: "wrap",
       }}
-    >
+    ><h1>Welcome to our personal finance App</h1> <b></b>
    {/*    <p style={{ marginLeft: "10%" }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
