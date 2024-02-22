@@ -63,7 +63,7 @@ const EntryList = () => {
 
   return (
     <div className="App"> 
-      {/* <h1 className="">List of Results</h1> */}
+      <h1 className="title">List of Results</h1>
     <div className="wrapper">
       
       {entries &&

@@ -83,3 +83,7 @@ button:focus-visible {
   display: flex;
 
 }
+.title{
+  align-content: center;
+  text-align: center;
+}
