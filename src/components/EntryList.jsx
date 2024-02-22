@@ -69,16 +69,12 @@ const EntryList = () => {
       {entries &&
         entries.map((entry) => (
           <div key={entry.id} style={divStyle}>
+            
             {editingId === entry.id ? (
               <>
               <h2 style={{ border: '2px solid black'}}>{entry.input}</h2>
-               Date:
-               <input 
-                  type="date"
-                  name="data_input"
-                  value={editingEntry.data_input}
-                  onChange={handleInputChange}
-                />
+              <h3>{entry.category}</h3>
+               
                 <br/><br/>
                 Note: 
                 <input 
@@ -94,6 +90,13 @@ const EntryList = () => {
                   value={editingEntry.category}
                   onChange={handleInputChange}
                 /> */}
+                Date:
+               <input 
+                  type="date"
+                  name="data_input"
+                  value={editingEntry.data_input}
+                  onChange={handleInputChange}
+                /><br></br>
                Value: 
                 <input 
                   type="number"
