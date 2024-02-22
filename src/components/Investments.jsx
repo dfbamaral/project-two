@@ -12,7 +12,7 @@ const Investments = () => {
     }
 
     const interest = parseFloat(principal) * parseFloat(rate) / 100;
-    setResult(interest.toFixed(2)+principal);
+    setResult(interest.toFixed(2));
   };
 
   return (
