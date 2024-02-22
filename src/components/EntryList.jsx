@@ -62,7 +62,9 @@ const EntryList = () => {
   }
 
   return (
-    <div className="wrapper">
+  
+    <div className="wrapper" style={{ marginTop: "100px" }}>
+      <br> </br>
       {entries &&
         entries.map((entry) => (
           <div key={entry.id} style={divStyle}>
