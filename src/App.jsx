@@ -29,8 +29,9 @@ function App() {
         <Route path="/add" element={<AddNewEntry />} />
         <Route path="/entrylist" element={<EntryList />} />
         <Route path='/investments' element={<Investments />} />
-        <Route path="*" element={<Error />} />
         <Route path="/chart" element={<Charts />} />
+        <Route path="*" element={<Error />} />
+        
       </Routes>
     </div>
   </>
