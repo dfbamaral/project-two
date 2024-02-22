@@ -63,8 +63,9 @@ const EntryList = () => {
 
   return (
     <div className="App"> 
+      <h1>List of Results</h1>
     <div className="wrapper">
-      <br> </br>
+      
       {entries &&
         entries.map((entry) => (
           <div key={entry.id} style={divStyle}>
