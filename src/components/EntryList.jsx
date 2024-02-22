@@ -63,8 +63,9 @@ const EntryList = () => {
 
   return (
     <div className="App"> 
-      <h1 className="title">List of Results</h1>
-      <div>
+      <div className="title">
+      <h1>List of Results</h1>
+      </div>
     <div className="wrapper">
       
       {entries &&
@@ -136,7 +137,7 @@ const EntryList = () => {
             )}
           </div>
         ))}
-      </div>
+        
     </div>
     </div>
   )
