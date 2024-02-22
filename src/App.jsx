@@ -10,6 +10,7 @@ import BudgetPage from "./pages/BudgetPage";
 import EntryList from "./components/EntryList";
 import Error from "./pages/Error"
 import Investments from "./components/Investments";
+import Charts from "./components/Charts";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/entrylist" element={<EntryList />} />
         <Route path='/investments' element={<Investments />} />
         <Route path="*" element={<Error />} />
+        <Route path="/chart" element={<Charts />} />
       </Routes>
     </div>
   </>
