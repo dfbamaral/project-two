@@ -17,7 +17,7 @@ const HomePage = () => (
         cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
         est laborum.
       </p> */}
-      <img src="landpage.jpg" alt="random" width={400} height={400} alignItems="center"/>
+      <img src="landpage.jpg" alt="random" width={600} height={600} alignItems="center"/>
       
 
       
