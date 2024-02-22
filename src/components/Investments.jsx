@@ -7,12 +7,12 @@ const Investments = () => {
 
   const calculateInterest = () => {
     if (principal === "" || rate === "") {
-      setResult("Por favor, preencha todos os campos.");
+      setResult("Please fill full fields.");
       return;
     }
 
     const interest = parseFloat(principal) * parseFloat(rate) / 100;
-    setResult(interest.toFixed(2));
+    setResult(interest.toFixed(2)+{principal});
   };
 
   return (
