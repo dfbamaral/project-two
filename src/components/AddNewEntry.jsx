@@ -106,7 +106,7 @@ function AddNewEntry() {
             <input type="radio" name="category" value="education" onChange={(e)=> setCategory(e.target.value)}/>
             <label> Education 📚 </label>
             <input type="radio" name="category" value="home" onChange={(e)=> setCategory(e.target.value)}/>
-            <label> Home </label>
+            <label> Home 🏠</label>
             <input type="radio" name="category" value="transportation" onChange={(e)=> setCategory(e.target.value)}/>
             <label> Car/Transportation 🚗 </label>
             <input type="radio" name="category" value="food"onChange={(e)=> setCategory(e.target.value)} />
