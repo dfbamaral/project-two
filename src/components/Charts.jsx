@@ -97,7 +97,7 @@ const Charts = () => {
           <Legend />
           <Bar dataKey="value" fill="#8884d8" />
         </BarChart>
-        {entries &&
+        {/* {entries &&
           entries.map((entry) => (
             <div key={entry.id} style={divStyle}>
               {editingId === entry.id ? (
@@ -156,7 +156,7 @@ const Charts = () => {
                 </>
               )}
             </div>
-          ))}
+          ))} */}
       </div>
     </div>
   )
