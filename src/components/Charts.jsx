@@ -6,8 +6,8 @@ const API_URL = "https://project2-json-server-backend.onrender.com"
 
 const Charts = () => {
   const [entries, setEntries] = useState([])
-  const [editingId, setEditingId] = useState(null)
-  const [editingEntry, setEditingEntry] = useState({ notes: '', category: '', data_input: '', value: '' })
+  //const [editingId, setEditingId] = useState(null)
+  //const [editingEntry, setEditingEntry] = useState({ notes: '', category: '', data_input: '', value: '' })
 
   const divStyle = {
     border: "1px solid #ccc",
