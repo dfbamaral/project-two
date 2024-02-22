@@ -62,8 +62,8 @@ const EntryList = () => {
   }
 
   return (
-  
-    <div className="wrapper" style={{ marginTop: "100px" }}>
+    <div className="App"> 
+    <div className="wrapper">
       <br> </br>
       {entries &&
         entries.map((entry) => (
@@ -132,6 +132,7 @@ const EntryList = () => {
             )}
           </div>
         ))}
+    </div>
     </div>
   )
 }
