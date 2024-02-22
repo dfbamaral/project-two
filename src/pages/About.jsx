@@ -25,12 +25,12 @@ function About() {
                     <p>Esmael Filipe</p>
                     <div class="buttonmig">
                     <button class="button">
-                        <a href="" class="no-link-style" target="_blank">
+                        <a href="https://www.linkedin.com/in/esmael-filipe-315418271/" class="no-link-style" target="_blank">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" width="65" height="65"   transform="matrix(1, 0, 0, 1, -7.105427357601002e-15, -3.552713678800501e-15)" />
                     </a></button>
                     
                     <button class="button">
-                        <a href="" class="no-link-style" target="_blank">
+                        <a href="https://github.com/EsmaelFilipe" class="no-link-style" target="_blank">
                         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="65" height="65"   transform="matrix(1, 0, 0, 1, -7.105427357601002e-15, -3.552713678800501e-15)" />
                     </a></button>
                     
