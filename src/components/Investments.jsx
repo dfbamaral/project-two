@@ -40,7 +40,7 @@ const Investments = () => {
       />
       <br></br>
       <button onClick={calculateInterest}>Calcular</button>
-      {result && <p>Rendimento: {result}€ after 12mouths</p>}
+      {result && <p>Income: {result}€ after 12mouths</p>}
 
       <br></br>
       <div style={{
