@@ -25,7 +25,7 @@ const Charts = () => {
     borderRadius: "3px",
     cursor: "pointer",
   }
-
+/* 
   const deleteEntry = (entryId) => {
     axios
       .delete(`${API_URL}/finance/${entryId}`)
@@ -33,15 +33,15 @@ const Charts = () => {
         setEntries(entries.filter((entry) => entry.id !== entryId))
       })
       .catch((error) => console.log(error))
-  }
+  } */
 
-  const editEntry = (entryId) => {
+ /*  const editEntry = (entryId) => {
     setEditingId(entryId)
     const entryToEdit = entries.find((entry) => entry.id === entryId)
     setEditingEntry(entryToEdit)
-  }
+  } */
 
-  const updateEntry = (entryId, updatedEntry) =>{
+ /*  const updateEntry = (entryId, updatedEntry) =>{
     axios
       .put(`${API_URL}/finance/${entryId}`, updatedEntry)
       .then(() => {
@@ -49,19 +49,19 @@ const Charts = () => {
       })
       .catch((error) => console.log(error))
   }
-
+ */
   useEffect(() => {
     axios
       .get(`${API_URL}/finance`)
       .then((response) => setEntries(response.data))
       .catch((error) => console.log(error))
   }, [])
-
+/* 
   const handleInputChange = (event) => {
     const { name, value } = event.target
     setEditingEntry({ ...editingEntry, [name]: value })
   }
-
+ */
   // Group entries by category and sum values
   const entriesByCategory = entries.reduce((acc, entry) => {
     if (!acc[entry.category]) {
