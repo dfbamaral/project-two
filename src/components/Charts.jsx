@@ -76,8 +76,8 @@ const Charts = () => {
   return (
     <div className="App">
       <div className="title">
-        <h1>List of Results</h1>
-      </div>
+        <h1>Graphic</h1>
+      
       <div className="wrapper">
         <BarChart
           width={500}
@@ -157,6 +157,7 @@ const Charts = () => {
               )}
             </div>
           ))} */}
+      </div>
       </div>
     </div>
   )
