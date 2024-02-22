@@ -4,7 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rec
 
 const API_URL = "https://project2-json-server-backend.onrender.com"
 
-const EntryList = () => {
+const Charts = () => {
   const [entries, setEntries] = useState([])
   const [editingId, setEditingId] = useState(null)
   const [editingEntry, setEditingEntry] = useState({ notes: '', category: '', data_input: '', value: '' })
@@ -162,4 +162,4 @@ const EntryList = () => {
   )
 }
 
-export default EntryList
+export default Charts
