@@ -30,7 +30,8 @@ const Investments = () => {
         placeholder="How much do you want invest?"
         value={principal}
         onChange={(e) => setPrincipal(e.target.value)}
-      />
+      /> 
+      +
       <input
         type="number"
         placeholder="Interest Rate (%)"
