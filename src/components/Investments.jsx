@@ -24,15 +24,16 @@ const Investments = () => {
         flexWrap: "wrap",
       }}
     >
+      <h1>Calculater of Interest</h1>
       <input
         type="number"
-        placeholder="Valor do dinheiro"
+        placeholder="How much do you want invest?"
         value={principal}
         onChange={(e) => setPrincipal(e.target.value)}
       />
       <input
         type="number"
-        placeholder="Taxa de juro (%)"
+        placeholder="Interest Rate (%)"
         value={rate}
         onChange={(e) => setRate(e.target.value)}
       />
@@ -41,7 +42,12 @@ const Investments = () => {
       {result && <p>Rendimento: {result}</p>}
 
       <br></br>
-      <div>
+      <div style={{
+        margin: 50,
+        alignItems: "center",
+        justifyContent: "center",
+        flexWrap: "wrap",
+      }}>
       <iframe
             src="https://pt.widgets.investing.com/top-cryptocurrencies?theme=darkTheme&cols=symbol,priceUsd,priceBtc,chg24,chg7"
             width="317"
