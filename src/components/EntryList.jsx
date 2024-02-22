@@ -62,36 +62,43 @@ const EntryList = () => {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       {entries &&
         entries.map((entry) => (
           <div key={entry.id} style={divStyle}>
             {editingId === entry.id ? (
               <>
+              <h2 style={{ border: '2px solid black'}}>{entry.input}</h2>
+               Date:
+               <input 
+                  type="date"
+                  name="data_input"
+                  value={editingEntry.data_input}
+                  onChange={handleInputChange}
+                />
+                <br/><br/>
+                Note: 
                 <input 
                   type="text"
                   name="notes"
                   value={editingEntry.notes}
                   onChange={handleInputChange}
                 />
+                <br></br>
               {/*   <input 
                   type="text"
                   name="category"
                   value={editingEntry.category}
                   onChange={handleInputChange}
                 /> */}
-                <input 
-                  type="date"
-                  name="data_input"
-                  value={editingEntry.data_input}
-                  onChange={handleInputChange}
-                />
+               Value: 
                 <input 
                   type="number"
                   name="value"
                   value={editingEntry.value}
                   onChange={handleInputChange}
                 />
+                <br /><br />
                 <button 
                   style={buttonStyle}
                   onClick={() => updateEntry(entry.id, editingEntry)}
@@ -110,13 +117,13 @@ const EntryList = () => {
                 <button 
                   style={buttonStyle}
                   onClick={() => deleteEntry(entry.id)}
-                ><img src={"\public\delete.png"} width={25}height={25} />
+                ><img src="delete.png" width={25}height={25} />
                   
                 </button>
                 <button 
                   style={buttonStyle}
                   onClick={() => editEntry(entry.id)}
-                ><img src={"\public\edit.png"} width={25}height={25} />
+                ><img src="edit.png" width={25}height={25} />
                  
                 </button>
               </>
