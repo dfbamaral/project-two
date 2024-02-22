@@ -39,6 +39,7 @@ function Sidebar(props) {
       <NavLink to="/about">
         <button style={{ marginBottom: "5px" }}>About</button>
       </NavLink>
+      
 
 
     </div>
