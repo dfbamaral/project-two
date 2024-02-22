@@ -83,8 +83,8 @@ button:focus-visible {
   display: flex;
 
 }
-.title{
-  display: flex;
+.title h1{
+  width: 100%;
   text-align: center;
   
 }
