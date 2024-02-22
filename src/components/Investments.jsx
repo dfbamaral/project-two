@@ -36,10 +36,12 @@ const Investments = () => {
         value={rate}
         onChange={(e) => setRate(e.target.value)}
       />
+      <br></br>
       <button onClick={calculateInterest}>Calcular</button>
       {result && <p>Rendimento: {result}</p>}
 
       <br></br>
+      <div>
       <iframe
             src="https://pt.widgets.investing.com/top-cryptocurrencies?theme=darkTheme&cols=symbol,priceUsd,priceBtc,chg24,chg7"
             width="317"
@@ -54,7 +56,7 @@ const Investments = () => {
         width="317"
         height="467"
       ></iframe>
-
+    </div>
     </div>
   );
 };
